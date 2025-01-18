@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:00:34 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/18 17:17:14 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/18 19:52:03 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ lista *add_back_node(lista **head, char *s)
 	return node;
 }
 
-void free_list(lista *head)
+void free_list(lista **head)
 {
-	lista *temp = head;
+	lista *temp = *head;
 	lista *newnode;
 
 	while (temp != NULL)
@@ -98,13 +98,13 @@ void free_list(lista *head)
 		free(temp);
 		temp = newnode;
 	}
-	temp = NULL;
+	*head = NULL;
 }
 
 int main(void)
 {
 	lista *head = NULL;
-	
+
 	add_node(&head, "FIRST");
     add_node(&head, "SECOND");
     add_node(&head, "THIRD");
@@ -114,6 +114,7 @@ int main(void)
 
 	print_list(head);
 	print_len(head);
-	free_list(head);
-    return (0);
+	free_list(&head);
+
+	return (0);
 }
