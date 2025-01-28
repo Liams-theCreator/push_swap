@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   listfunc.c                                         :+:      :+:    :+:   */
+/*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 10:46:37 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/28 18:35:47 by imellali         ###   ########.fr       */
+/*   Created: 2025/01/28 16:59:37 by imellali          #+#    #+#             */
+/*   Updated: 2025/01/28 17:00:04 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-static t_lista	*ft_create_node(t_lista **head, int num)
+void	ft_error(void)
 {
-	t_lista	*node;
-	t_lista	*h;
-
-	h = *head;
-	node = malloc(sizeof(t_lista));
-	if (!node)
-		return (NULL);
-	node->num = num;
-	node->next = h;
-	*head = node;
-	return (node);
+	write(2, "Error\n", 6);
+	exit(44);
 }
 
-void	ft_add_to_list(t_lista **head, char **nums)
+void	free_array(char **array)
 {
-	int		i;
+	int	i;
 
 	i = 0;
-	while (nums[i])
+	while (array[i])
 	{
-		ft_create_node(head, ft_atoi(nums[i]));
+		free(array[i]);
 		i++;
 	}
+	free(array);
 }

@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:42 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/28 16:31:27 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:52:54 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ static size_t	ft_checkin(char c)
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		sign;
+	int			i;
+	int			sign;
 	long long	result;
 
 	i = 0;
@@ -89,10 +89,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if ((result * sign) < -2147483648 || (result * sign) > 2147483647)
-	{
-		ft_error();
-		return (-1);
-	}
+		return (ft_error(), -1);
 	return ((int)(result * sign));
 }
-

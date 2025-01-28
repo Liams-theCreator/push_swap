@@ -6,17 +6,18 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/28 16:30:45 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/28 18:35:18 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 #include <stdio.h>
 
-size_t print_list(lista *h)
+static size_t	print_list(t_lista *h)
 {
-	size_t nodes = 0;
-	
+	size_t	nodes;
+
+	nodes = 0;
 	while (h != NULL)
 	{
 		printf("  [ %d ]  ", h->num);
@@ -24,12 +25,12 @@ size_t print_list(lista *h)
 		nodes++;
 	}
 	printf("\n");
-	return nodes;
+	return (nodes);
 }
 
-void free_list(lista **head)
+static void	free_list(t_lista **head)
 {
-	lista *temp;
+	t_lista	*temp;
 
 	while (*head)
 	{
@@ -40,14 +41,14 @@ void free_list(lista **head)
 	*head = NULL;
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	lista *head;
+	t_lista	*head;
 
 	if (argc <= 1)
 	{
 		ft_error();
-		return -1;
+		return (-1);
 	}
 	head = ft_check(argc, argv);
 	if (head != NULL)
