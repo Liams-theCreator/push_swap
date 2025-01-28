@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:28:27 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/27 17:36:55 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:26:34 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,4 +122,24 @@ int ft_strcmp(char *s1, char *s2)
 	if (s1[i] == '\0' && s2[i] == '\0')
 		return -1;
     return (0);
+}
+
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	size_t	i;
+	char	*buffer;
+
+	i = 0;
+	len = ft_strlen(s);
+	buffer = malloc(sizeof(char) * (len + 1));
+	if (buffer == NULL)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		buffer[i] = s[i];
+		i++;
+	}
+	buffer[i] = '\0';
+	return (buffer);
 }

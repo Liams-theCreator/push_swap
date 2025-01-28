@@ -6,11 +6,30 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:47:19 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/27 18:08:00 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:42:15 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+void	ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(44);
+}
+
+void free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
 
 char	**ft_helper(int argc, char **argv)
 {
@@ -32,7 +51,7 @@ char	**ft_helper(int argc, char **argv)
 		return (NULL);
 	while (j < count)
 	{
-		nums[j] = argv[j + 1];
+		nums[j] = ft_strdup(argv[j + 1]);
 		j++;
 	}
 	nums[count] = NULL;
@@ -60,7 +79,7 @@ char	**ft_parsing(int argc, char **argv)
     return nums;
 }
 
-int	ft_dupchek(char **numbers)
+int	ft_dupcheck(char **numbers)
 {
 	int	i;
 	int	j;
@@ -91,7 +110,7 @@ int	ft_intcheck(char **numbers)
 	{
 		s = numbers[i];
 		j = 0;
-		if (s[j] == '-') 
+		if (s[j] == '-' || s[j] == '+') 
 			j++;
 		while (s[j])
 		{
@@ -104,13 +123,49 @@ int	ft_intcheck(char **numbers)
 	return (0);
 }
 
-char	**ft_check(int argc, char **argv)
+lista	*ft_create_node(lista **head, int num)
 {
-	char **nums;
+	lista	*node;
+	lista	*h;
 
-	nums = ft_parsing(argc, argv);
-	if ((ft_dupcheck(nums)) < 0 && (ft_intcheck(nums)) < 0)
+	h = *head;
+	node = malloc(sizeof(lista));
+	if (!node)
+		return (NULL);
+	node->num = num;
+	node->next = h;
+	*head = node;
+	return (node);
+}
+
+void	ft_add_to_list(lista **head, char **nums)
+{
+	int		i;
+
+	i = 0;
+	while (nums[i])
 	{
-		// store it in a linked list
+		ft_create_node(head, ft_atoi(nums[i]));
+		i++;
 	}
+}
+
+lista *ft_check(int argc, char **argv)
+{
+	char	**nums;
+	lista	*head;
+
+	head = NULL;
+	nums = ft_parsing(argc, argv);
+	if (!nums)
+		return (NULL);
+	if ((ft_dupcheck(nums)) == 0 && (ft_intcheck(nums)) == 0)
+	{
+		ft_add_to_list(&head, nums);
+		free_array(nums);
+		return (head);
+	}
+	free_array(nums);
+	ft_error();
+	return (NULL);
 }

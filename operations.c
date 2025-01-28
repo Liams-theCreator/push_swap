@@ -6,10 +6,8 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:47:53 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/27 10:48:14 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:32:31 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-pa pb sa ra rb ...
