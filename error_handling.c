@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:59:37 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/28 17:00:04 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:07:16 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,17 @@ void	free_array(char **array)
 		i++;
 	}
 	free(array);
+}
+
+void	free_list(t_lista **head)
+{
+	t_lista	*temp;
+
+	while (*head)
+	{
+		temp = *head;
+		*head = temp->next;
+		free(temp);
+	}
+	*head = NULL;
 }
