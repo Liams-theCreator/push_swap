@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/28 18:35:18 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:29:03 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,9 @@ int	main(int argc, char **argv)
 	t_lista	*head;
 
 	if (argc <= 1)
-	{
 		ft_error();
-		return (-1);
-	}
-	head = ft_check(argc, argv);
-	if (head != NULL)
-	{
-		print_list(head);
-		free_list(&head);
-	}
+	head = ft_parsing(argc, argv);
+	print_list(head);
+	free_list(&head);
 	return (0);
 }
