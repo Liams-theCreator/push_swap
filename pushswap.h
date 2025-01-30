@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/30 17:25:34 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:21:17 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ size_t	ft_strlen(const char *s);
 t_lista	*ft_parsing(int argc, char **argv);
 
 // linked list functions
+t_lista	*ft_create_node(t_lista **head, int num);
 void	ft_add_to_list(t_lista **head, int nums);
 
 // error handling functions
@@ -47,5 +48,7 @@ void	ra(t_lista **stack);
 void	rb(t_lista **stack);
 void	rra(t_lista **stack);
 void	rrb(t_lista **stack);
+void	pa(t_lista **stack_a, t_lista **stack_b);
+void	pb(t_lista **stack_a, t_lista **stack_b);
 
 #endif

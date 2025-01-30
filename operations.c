@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:47:53 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/30 17:28:44 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:20:42 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,4 +126,30 @@ void	rrb(t_lista **stack)
 	temp->next = NULL;
 	*stack = new_head;
 	write(1, "rrb\n", 4);
+}
+
+void	pb(t_lista **stack_a, t_lista **stack_b)
+{
+	t_lista	*head;
+	t_lista	*new_head;
+
+	head = *stack_a;
+	new_head = (*stack_a)->next;
+	ft_create_node(stack_b, head->num);
+	*stack_a = new_head;
+	free(head);
+	write(1, "pb\n", 3);
+}
+
+void	pa(t_lista **stack_a, t_lista **stack_b)
+{
+	t_lista	*head;
+	t_lista	*new_head;
+
+	head = *stack_b;
+	new_head = (*stack_b)->next;
+	ft_create_node(stack_a, head->num);
+	*stack_b = new_head;
+	free(head);
+	write(1, "pa\n", 3);
 }
