@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/29 19:08:27 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:25:34 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,13 @@ void	ft_add_to_list(t_lista **head, int nums);
 void	ft_error(void);
 void	free_array(char **array);
 void	free_list(t_lista **head);
+
+// operations functions
+void	sa(t_lista **stack);
+void	sb(t_lista **stack);
+void	ra(t_lista **stack);
+void	rb(t_lista **stack);
+void	rra(t_lista **stack);
+void	rrb(t_lista **stack);
 
 #endif

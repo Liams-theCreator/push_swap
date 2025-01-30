@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/29 19:08:41 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/30 17:22:44 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	print_list(t_lista *h)
 	nodes = 0;
 	while (h != NULL)
 	{
-		printf("  [ %d ]  ", h->num);
+		printf("  [ %d ]  \n", h->num);
 		h = h->next;
 		nodes++;
 	}
@@ -30,12 +30,14 @@ static size_t	print_list(t_lista *h)
 
 int	main(int argc, char **argv)
 {
-	t_lista	*head;
+	t_lista	*stack_a;
 
 	if (argc <= 1)
 		ft_error();
-	head = ft_parsing(argc, argv);
-	print_list(head);
-	free_list(&head);
+	stack_a = ft_parsing(argc, argv);
+	print_list(stack_a);
+	sa(&stack_a);
+	print_list(stack_a);
+	free_list(&stack_a);
 	return (0);
 }

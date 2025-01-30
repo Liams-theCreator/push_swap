@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:47:19 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/29 19:13:05 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/30 13:56:10 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ t_lista	*ft_parsing(int argc, char **argv)
 	{
 		temp_arr = ft_split(argv[i], ' ');
 		if (!temp_arr || !temp_arr[0])
-			ft_error();
-		if (!temp_arr)
 			ft_error();
 		j = 0;
 		while (temp_arr[j])
