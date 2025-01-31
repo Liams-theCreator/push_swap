@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/30 18:21:17 by imellali         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:55:54 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,15 @@ void	free_array(char **array);
 void	free_list(t_lista **head);
 
 // operations functions
-void	sa(t_lista **stack);
-void	sb(t_lista **stack);
-void	ra(t_lista **stack);
-void	rb(t_lista **stack);
-void	rra(t_lista **stack);
-void	rrb(t_lista **stack);
+void	sa(t_lista **stack, int msg);
+void	sb(t_lista **stack, int msg);
+void	ss(t_lista **stack_a, t_lista **stack_b);
+void	ra(t_lista **stack, int msg);
+void	rb(t_lista **stack, int msg);
+void	rr(t_lista **stack_a, t_lista **stack_b);
+void	rra(t_lista **stack, int msg);
+void	rrb(t_lista **stack, int msg);
+void	rrr(t_lista **stack_a, t_lista **stack_b);
 void	pa(t_lista **stack_a, t_lista **stack_b);
 void	pb(t_lista **stack_a, t_lista **stack_b);
 
