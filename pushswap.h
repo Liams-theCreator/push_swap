@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/31 18:55:54 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:10:48 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct list_a
 {
@@ -40,6 +41,7 @@ void	ft_add_to_list(t_lista **head, int nums);
 void	ft_error(void);
 void	free_array(char **array);
 void	free_list(t_lista **head);
+int	sorted(t_lista	*stack);
 
 // operations functions
 void	sa(t_lista **stack, int msg);
@@ -53,5 +55,8 @@ void	rrb(t_lista **stack, int msg);
 void	rrr(t_lista **stack_a, t_lista **stack_b);
 void	pa(t_lista **stack_a, t_lista **stack_b);
 void	pb(t_lista **stack_a, t_lista **stack_b);
+
+// sorting functions
+void	sort_two(t_lista **stack_a);
 
 #endif
