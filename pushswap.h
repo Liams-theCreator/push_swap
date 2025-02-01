@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 17:10:48 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 20:29:23 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	pb(t_lista **stack_a, t_lista **stack_b);
 
 // sorting functions
 void	sort_two(t_lista **stack_a);
+void	sort_three(t_lista **stack_a);
 
 #endif

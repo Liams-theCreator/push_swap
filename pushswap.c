@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 17:13:43 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 20:29:39 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	main(int argc, char **argv)
 	if ((sorted(stack_a)) == -1)
 	{
 		print_list(stack_a);
-		if (argc == 3)
+		if (argc == 4)
 		{
-			sort_two(&stack_a);
+			sort_three(&stack_a);
 			print_list(stack_a);
 			free_list(&stack_a);
 		}
