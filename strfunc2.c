@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:42 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/28 16:52:54 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 14:51:54 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if ((result * sign) < -2147483648 || (result * sign) > 2147483647)
-		return (ft_error(), -1);
+		return (ft_error());
 	return ((int)(result * sign));
 }
