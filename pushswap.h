@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 20:29:23 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:43:15 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct list_a
 
 // string functions
 char	**ft_split(char const *s, char c);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, char **array, t_lista **list);
 char	*ft_strdup(const char *s);
 int		ft_strcmp(char *s1, char *s2);
 size_t	ft_strlen(const char *s);
@@ -41,7 +41,8 @@ void	ft_add_to_list(t_lista **head, int nums);
 void	ft_error(void);
 void	free_array(char **array);
 void	free_list(t_lista **head);
-int	sorted(t_lista	*stack);
+void	exiting(char **array, t_lista **list);
+int		sorted(t_lista	*stack);
 
 // operations functions
 void	sa(t_lista **stack, int msg);

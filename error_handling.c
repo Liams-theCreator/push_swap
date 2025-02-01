@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:59:37 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 17:24:17 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:42:17 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,11 @@ int	sorted(t_lista	*stack)
 		head = head->next;
 	}
 	return (0);
+}
+
+void	exiting(char **array, t_lista **list)
+{
+	free_array(array);
+	free_list(list);
+	ft_error();
 }

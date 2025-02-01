@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:28:27 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/28 16:57:23 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:30:41 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,10 @@ static char	**ft_insert(char const *s, char **buffer, char c)
 		{
 			buffer[idx] = ft_mallocing((s + i), c);
 			if (buffer[idx] == NULL)
-				return (ft_free(buffer));
+			{
+				ft_free(buffer);
+				return (NULL);
+			}
 			idx++;
 		}
 		while (s[i] != '\0' && s[i] != c)

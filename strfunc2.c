@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:42 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 15:27:54 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:40:19 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static size_t	ft_checkin(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, char **array, t_lista **list)
 {
 	int			i;
 	int			sign;
@@ -89,6 +89,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if ((result * sign) < -2147483648 || (result * sign) > 2147483647)
-		ft_error();
+		exiting(array, list);
 	return ((int)(result * sign));
 }

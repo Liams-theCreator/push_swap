@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 17:00:04 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 20:54:07 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/01 22:42:58 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	sort_three(t_lista **stack_a)
 	fst = (*stack_a)->num;
 	sec = (*stack_a)->next->num;
 	trd = (*stack_a)->next->next->num;
-
 	if (fst > sec && sec > trd)
 	{
 		sa(stack_a, 1);
