@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:46:37 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 23:16:51 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:55:27 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_lista	*ft_create_node(t_lista **head, int num)
 	return (node);
 }
 
-void	ft_add_to_list(t_lista **head, int num)
+void	ft_add_to_list(t_lista **head, char **array, int num)
 {
 	t_lista	*current;
 
@@ -35,7 +35,7 @@ void	ft_add_to_list(t_lista **head, int num)
 	while (current)
 	{
 		if (current->num == num)
-			ft_error();
+			exiting(array, head);
 		current = current->next;
 	}
 	ft_create_node(head, num);

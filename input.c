@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:47:19 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/01 23:42:28 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:55:09 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ t_lista	*ft_parsing(int argc, char **argv)
 		{
 			if (ft_intcheck(temp_arr[j]) == -1)
 				exiting(temp_arr, &list);
-			ft_add_to_list(&list, ft_atoi(temp_arr[j], temp_arr, &list));
+			ft_add_to_list(&list, temp_arr,
+				ft_atoi(temp_arr[j], temp_arr, &list));
 			j++;
 		}
 		free_array(temp_arr);
