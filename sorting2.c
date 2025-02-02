@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:23:31 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/02 19:11:41 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/02 19:19:50 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static int	find_min(t_lista *stack_a)
 	its_index = 0;
 	counter = 0;
 	head = stack_a;
-
 	while (head)
 	{
 		if (head->num < min_num)
@@ -92,7 +91,7 @@ void	sort_four(t_lista **stack_a, t_lista **stack_b)
 	int	min_index;
 
 	min_index = find_min(*stack_a);
-	shift_to_push(stack_a, stack_b, min_index);
+	shift_to_push4(stack_a, stack_b, min_index);
 	sort_three(stack_a);
 	pa(stack_a, stack_b);
 }
@@ -106,7 +105,8 @@ void	sort_five(t_lista **stack_a, t_lista **stack_b)
 	shift_to_push5(stack_a, stack_b, num1_idx);
 	num2_idx = find_min(*stack_a);
 	shift_to_push4(stack_a, stack_b, num2_idx);
-	sort_three(stack_a, stack_b);
+	if ((sorted(*stack_a)) == -1)
+		sort_three(stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }
