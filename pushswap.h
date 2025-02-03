@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/02 19:11:59 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:37:03 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,9 @@ void	sort_two(t_lista **stack_a);
 void	sort_three(t_lista **stack_a);
 void	sort_four(t_lista **stack_a, t_lista **stack_b);
 void	sort_five(t_lista **stack_a, t_lista **stack_b);
+
+// utils functions
+int	find_max(t_lista *stack_a);
+int	find_min(t_lista *stack_a);
 
 #endif

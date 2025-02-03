@@ -6,35 +6,11 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:23:31 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/02 19:19:50 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:37:43 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-static int	find_min(t_lista *stack_a)
-{
-	int		min_num;
-	int		its_index;
-	int		counter;
-	t_lista	*head;
-
-	min_num = stack_a->num;
-	its_index = 0;
-	counter = 0;
-	head = stack_a;
-	while (head)
-	{
-		if (head->num < min_num)
-		{
-			min_num = head->num;
-			its_index = counter;
-		}
-		counter++;
-		head = head->next;
-	}
-	return (its_index);
-}
 
 static void	shift_to_push4(t_lista **stack_a, t_lista **stack_b, int index)
 {
