@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/03 14:37:03 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:24:23 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_lista	*ft_parsing(int argc, char **argv);
 // linked list functions
 t_lista	*ft_create_node(t_lista **head, int num);
 void	ft_add_to_list(t_lista **head, char **array, int num);
+int		list_len(t_lista *h);
 
 // error handling functions
 void	ft_error(void);

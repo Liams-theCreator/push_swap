@@ -6,11 +6,24 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:46:37 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/02 17:55:27 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:24:58 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+int	list_len(t_lista *h)
+{
+	int	len;
+
+	len = 0;
+	while (h)
+	{
+		h = h->next;
+		len++;
+	}
+	return (len);
+}
 
 t_lista	*ft_create_node(t_lista **head, int num)
 {
