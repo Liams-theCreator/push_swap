@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/02 19:12:25 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:36:25 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ int	main(int argc, char **argv)
 			sort_four(&stack_a, &stack_b);
 		else if (argc == 6)
 			sort_five(&stack_a, &stack_b);
-		print_list(stack_a);
+		else
+			sorting_algorithm(&stack_a, &stack_b);
 		print_list(stack_b);
+		print_list(stack_a);
 	}
 	free_list(&stack_a);
 	free_list(&stack_b);

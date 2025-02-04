@@ -6,22 +6,85 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:29:57 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/03 17:09:04 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/04 20:45:11 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	sorting_algorithm(t_lista **stack_a, t_lista **stack_b)
+static void	case_one(t_lista **stack_a, t_lista **stack_b, int position)
+{
+	int	i;
+
+	i = 1;
+	while (i <= position)
+	{
+		rb(stack_b, 1);
+		i++;
+	}
+	pb(stack_a, stack_b);
+	i = 1;
+	while (i <= position)
+	{
+		rrb(stack_b, 1);
+		i++;
+	}
+}
+
+static void	case_two(t_lista **stack_a, t_lista **stack_b, int position)
+{
+	int	i;
+
+	i = 1;
+	while (i <= position)
+	{
+		rrb(stack_b, 1);
+		i++;
+	}
+	pb(stack_a, stack_b);
+	i = 1;
+	while (i <= position)
+	{
+		rb(stack_b, 1);
+		i++;
+	}
+}
+
+static void	case_three(t_lista **stack_a, t_lista **stack_b)
 {
 	pb(stack_a, stack_b);
+	rb(stack_b, 1);
+}
+
+static void	exec_moves(t_lista **stack_a, t_lista **stack_b, int position, int length)
+{
+	int	len;
+
+	len = length/2;
+	if (position < len)
+		case_one(stack_a, stack_b, position);
+	else if (position > len)
+		case_two(stack_a, stack_b, position);
+	else if (position == length)
+		case_three(stack_a, stack_b);
+}
+
+void	sorting_algorithm(t_lista **stack_a, t_lista **stack_b)
+{
+	int	position;
+	int	len;
+
 	pb(stack_a, stack_b);
-	while ((list_len(*stack_a)) != 3)
+	pb(stack_a, stack_b);
+	len = list_len(*stack_a);
+	while (len > 3)
 	{
-		// implementing sorting algo until 3 remaining on stack
+		position = find_position(*stack_b, (*stack_a)->num);
+		exec_moves(stack_a, stack_b, position, list_len(*stack_b));
+		len = list_len(*stack_a);
 	}
 	if ((sorted(*stack_a)) == -1)
 		sort_three(stack_a);
-	while (stack_b)
+	while (*stack_b)
 		pa(stack_a, stack_b);
 }
