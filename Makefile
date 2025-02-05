@@ -1,7 +1,7 @@
 NAME = push_swap
 CC = cc
 FLAGS = -Werror -Wextra -Wall
-SRC = input.c operations.c pushswap.c strfunc.c strfunc2.c strfunc3.c listfunc.c error_handling.c sorting.c sorting2.c algo_sort.c utils.c
+SRC = pushswap.c input.c operations.c strfunc.c strfunc2.c strfunc3.c listfunc.c error_handling.c sorting.c sorting2.c algo_sort.c utils.c push_a2b.c push_b2a.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

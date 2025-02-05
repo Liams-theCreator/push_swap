@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:47:53 by imellali          #+#    #+#             */
-/*   Updated: 2025/01/31 18:58:42 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/05 12:13:08 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,8 +160,6 @@ void	pb(t_lista **stack_a, t_lista **stack_b)
 	t_lista	*head;
 	t_lista	*new_head;
 
-	if (!(stack_b))
-		ft_error();
 	head = *stack_a;
 	new_head = (*stack_a)->next;
 	ft_create_node(stack_b, head->num);
@@ -175,8 +173,6 @@ void	pa(t_lista **stack_a, t_lista **stack_b)
 	t_lista	*head;
 	t_lista	*new_head;
 
-	if (!(*stack_a))
-		ft_error();
 	head = *stack_b;
 	new_head = (*stack_b)->next;
 	ft_create_node(stack_a, head->num);

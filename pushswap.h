@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/04 20:12:43 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/05 14:07:58 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ t_lista	*ft_parsing(int argc, char **argv);
 t_lista	*ft_create_node(t_lista **head, int num);
 void	ft_add_to_list(t_lista **head, char **array, int num);
 int		list_len(t_lista *h);
+size_t	print_list(t_lista *h);
 
 // error handling functions
 void	ft_error(void);
@@ -60,6 +61,8 @@ void	pb(t_lista **stack_a, t_lista **stack_b);
 
 // sorting functions
 void	sorting_algorithm(t_lista **stack_a, t_lista **stack_b);
+void    push_b2a(t_lista **stack_a, t_lista **stack_b);
+void    push_a2b(t_lista **stack_a, t_lista **stack_b);
 void	sort_two(t_lista **stack_a);
 void	sort_three(t_lista **stack_a);
 void	sort_four(t_lista **stack_a, t_lista **stack_b);
@@ -71,5 +74,6 @@ int	find_min(t_lista *stack_a);
 int	find_largest(t_lista *stack);
 int	find_smallest(t_lista *stack);
 int	find_position(t_lista *stack_b, int num);
+int	find_position_at_a(t_lista *stack_a, int num);
 
 #endif

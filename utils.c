@@ -92,13 +92,13 @@ int	find_position(t_lista *stack_b, int num)
 	head = stack_b;
 	position = 0;
 	if (num > largest)
-		return (position);
+		return (find_max(stack_b));
 	else if (num < smallest)
 		return (find_min(stack_b) + 1);
 	while (head && head->next)
 	{
 		if (head->num > num && num > head->next->num)
-			return (position);
+			return (position + 1);
 		position++;
 		head = head->next;
 	}
