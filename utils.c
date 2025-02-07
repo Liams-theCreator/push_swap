@@ -47,3 +47,33 @@ int	find_min(t_lista *stack_a)
 	}
 	return (its_index);
 }
+
+int	find_largest(t_lista *stack)
+{
+	int		largest;
+	t_lista	*head;
+	largest = stack->num;
+	head = stack;
+	while (head)
+	{
+		if (head->num > largest)
+			largest = head->num;
+		head = head->next;
+	}
+	return (largest);
+}
+
+int	find_smallest(t_lista *stack)
+{
+	int		smallest;
+	t_lista	*head;
+	smallest = stack->num;
+	head = stack;
+	while (head)
+	{
+		if (head->num < smallest)
+			smallest = head->num;
+		head = head->next;
+	}
+	return (smallest);
+}
