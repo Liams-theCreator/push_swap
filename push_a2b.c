@@ -6,73 +6,133 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:22 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/06 18:47:17 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/07 20:06:32 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-static void	case_one(t_lista **stack_a, t_lista **stack_b, int position)
+int	find_position(t_lista *stack_b, int num)
+{
+	int	position;
+	t_lista	*head;
+
+	head = stack_b;
+	position = 0;
+	while (head)
+	{
+		if (num > head->num)
+			return (position);
+		position++;
+		head = head->next;
+	}
+	return (position);
+}
+
+static int	find_idx(t_lista *stack_a, int num)
+{
+	int	idx;
+	t_lista *head;
+
+	idx = 0;
+	head = stack_a;
+	while (head)
+	{
+		if (num == head->num)
+			return (idx);
+		idx++;
+		head = head->next;
+	}
+	return (-1);
+}
+
+static int	minimum(int num1, int num2)
+{
+	if (num1 < num2)
+		return (num1);
+	return (num2);
+}
+
+static int	calcul_moves(t_lista *stack_a, int number, t_lista *stack_b, int position)
+{
+	int	cost_in_a;
+	int	cost_in_b;
+	int	index;
+
+	index = find_idx(stack_a, number);
+	cost_in_a = minimum(index, list_len(stack_a) - index);
+	cost_in_b = minimum(position, list_len(stack_b) - position);
+
+	return (cost_in_a + cost_in_b);
+}
+
+static void	perfom_ra(t_lista **stack, int index)
 {
 	int	i;
 
 	i = 0;
-	while (i < position)
+	while (i < index)
 	{
-		rb(stack_b, 1);
-		i++;
-	}
-	pb(stack_a, stack_b);
-	i = 0;
-	while (i < position)
-	{
-		rrb(stack_b, 1);
+		ra(stack, 1);
 		i++;
 	}
 }
 
-static void	case_two(t_lista **stack_a, t_lista **stack_b, int position)
-{
-	int	i;
-
-	i = 0;
-	while (i < position)
-	{
-		rrb(stack_b, 1);
-		i++;
-	}
-	pb(stack_a, stack_b);
-	i = 0;
-	while (i < position)
-	{
-		rb(stack_b, 1);
-		i++;
-	}
-}
-
-static void	exec_moves(t_lista **stack_a, t_lista **stack_b, int position, int length)
+static void	perfom_rra(t_lista **stack, int index)
 {
 	int	len;
 
-	len = length / 2;
-	if (position == 0)
+	len = list_len(*stack) - 1;
+	while (len >= index)
 	{
-		pb(stack_a, stack_b);
-		rb(stack_b, 1);
+		rra(stack, 1);
+		len--;
 	}
-	else if (position <= len)
-		case_one(stack_a, stack_b, position);
-	else
-		case_two(stack_a, stack_b, position);
+}
+
+static void	shift_2top_a(t_lista **stack_a, int index)
+{
+	int	length;
+
+	length = list_len(*stack_a) / 2;
+	if (index <= length)
+		perfom_ra(stack_a, index);
+	else if (index > length)
+		perfom_rra(stack_a, index);
+}
+
+static void	shift_2top_b(t_lista **stack_b, int position)
+{
+	int	length;
+
+	length = list_len(*stack_b) / 2;
+	if (position <= length)
+		perfom_ra(stack_b, position);
+	else if (position > length)
+		perfom_rra(stack_b, position);
 }
 
 void    push_a2b(t_lista **stack_a, t_lista **stack_b)
 {
-    int position;
+	int	moves;
+	int	cheap_moves;
+	t_lista *node;
+	t_lista *cheap_num;
 
-	while (list_len(*stack_a) > 3)
+	moves = 444444;
+	cheap_num = NULL;
+	node = *stack_a;
+	while (node)
 	{
-		position = find_position(*stack_b, (*stack_a)->num);
-		exec_moves(stack_a, stack_b, position, list_len(*stack_b));
+		cheap_moves = calcul_moves(*stack_a, node->num, *stack_b, find_position(*stack_b, node->num));
+		if (cheap_moves < moves)
+		{
+			moves = cheap_moves;
+			cheap_num = node;
+		}
+		node = node->next;
 	}
+	shift_2top_a(stack_a, find_idx(*stack_a, cheap_num->num));
+	shift_2top_b(stack_b, find_position(*stack_b, cheap_num->num));
+	pb(stack_a, stack_b);
 }
