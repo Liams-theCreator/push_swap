@@ -6,36 +6,12 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:22 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/07 21:37:12 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/08 16:23:14 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	find_position(t_lista *stack_b, int num)
-{
-	int		position;
-	int		largest;
-	int		smallest;
-	t_lista	*head;
-
-	largest = find_largest(stack_b);
-	smallest = find_smallest(stack_b);
-	head = stack_b;
-	position = 0;
-	if (num > largest)
-		return (0);
-	if (num < smallest)
-		return (list_len(stack_b) + 1);
-	while (head->next)
-	{
-		if (head->num > num && num > head->next->num)
-			return (position + 1);
-		position++;
-		head = head->next;
-	}
-	return (list_len(stack_b) + 1);
-}
 static int	find_idx(t_lista *stack_a, int num)
 {
 	int	idx;
@@ -73,26 +49,50 @@ static int	calcul_moves(t_lista *stack_a, int number, t_lista *stack_b, int posi
 	return (cost_in_a + cost_in_b);
 }
 
-static void	perfom_ra(t_lista **stack, int index)
+static void	perfom_ra(t_lista **stack_a, int index)
 {
 	int	i;
 
 	i = 0;
 	while (i < index)
 	{
-		ra(stack, 1);
+		ra(stack_a, 1);
 		i++;
 	}
 }
 
-static void	perfom_rra(t_lista **stack, int index)
+static void	perfom_rra(t_lista **stack_a, int index)
 {
 	int	len;
 
-	len = list_len(*stack) - 1;
+	len = list_len(*stack_a) - 1;
 	while (len >= index)
 	{
-		rra(stack, 1);
+		rra(stack_a, 1);
+		len--;
+	}
+}
+
+static void	perfom_rb(t_lista **stack_b, int index)
+{
+	int	i;
+
+	i = 0;
+	while (i < index)
+	{
+		rb(stack_b, 1);
+		i++;
+	}
+}
+
+static void	perfom_rrb(t_lista **stack_b, int index)
+{
+	int	len;
+
+	len = list_len(*stack_b) - 1;
+	while (len >= index)
+	{
+		rrb(stack_b, 1);
 		len--;
 	}
 }
@@ -114,9 +114,32 @@ static void	shift_2top_b(t_lista **stack_b, int position)
 
 	length = list_len(*stack_b) / 2;
 	if (position <= length)
-		perfom_ra(stack_b, position);
+		perfom_rb(stack_b, position);
 	else if (position > length)
-		perfom_rra(stack_b, position);
+		perfom_rrb(stack_b, position);
+}
+
+int	find_position(t_lista *stack_b, int num)
+{
+	int		position;
+	int		largest;
+	int		smallest;
+	t_lista	*head;
+
+	largest = find_largest(stack_b);
+	smallest = find_smallest(stack_b);
+	head = stack_b;
+	position = 0;
+	if (num > largest || num < smallest)
+		return (find_idx(stack_b, largest));
+	while (head->next)
+	{
+		if (head->num > num && num > head->next->num)
+			return (position + 1);
+		position++;
+		head = head->next;
+	}
+	return (position + 1);
 }
 
 void    push_a2b(t_lista **stack_a, t_lista **stack_b)

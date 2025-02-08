@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:29 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/05 16:34:31 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/08 16:39:57 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 //     while (*stack_b)
 //     {
-//         position = find_position_at_a(*stack_a, (*stack_b)->num);
-//         exec_moves(stack_a, position, list_len(*stack_a));
-//         pa(stack_a, stack_b);
+// 		//printing
 //     }
 // }
