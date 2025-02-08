@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:29 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/08 21:08:27 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/08 21:44:18 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	find_pos(t_lista *stack_a, int num)
 	head = stack_a;
 	position = 0;
 	if (num > largest)
-		return (find_idx(stack_a, largest));
+		return (find_idx(stack_a, largest) + 1);
 	else if (num < smallest)
         return (find_idx(stack_a, smallest));
 	while (head->next)

@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/08 20:50:27 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/08 21:46:19 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_parsing(argc, argv);
-	print_list(stack_a);
 	if ((sorted(stack_a)) == -1)
 	{
 		if (argc == 3)
@@ -51,7 +50,6 @@ int	main(int argc, char **argv)
 		else
 			sorting_algorithm(&stack_a, &stack_b);
 	}
-	print_list(stack_a);
 	free_list(&stack_a);
 	free_list(&stack_b);
 	return (0);
