@@ -69,11 +69,14 @@ void	sort_four(t_lista **stack_a, t_lista **stack_b);
 void	sort_five(t_lista **stack_a, t_lista **stack_b);
 
 // utils functions
+int	find_idx(t_lista *stack_a, int num);
 int	find_max(t_lista *stack_a);
 int	find_min(t_lista *stack_a);
 int	find_largest(t_lista *stack);
 int	find_smallest(t_lista *stack);
 int	find_position(t_lista *stack_b, int num);
-int	find_position_at_a(t_lista *stack_a, int num);
+int	find_pos(t_lista *stack_a, int num);
+void	perfom_ra(t_lista **stack_a, int index);
+void	perfom_rra(t_lista **stack_a, int index);
 
 #endif

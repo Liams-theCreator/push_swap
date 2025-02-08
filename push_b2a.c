@@ -6,18 +6,56 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:29 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/08 16:39:57 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/08 21:08:27 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-// void push_b2a(t_lista **stack_a, t_lista **stack_b)
-// {
-//     int position;
+int	find_pos(t_lista *stack_a, int num)
+{
+	int		position;
+	int		largest;
+	int		smallest;
+	t_lista	*head;
 
-//     while (*stack_b)
-//     {
-// 		//printing
-//     }
-// }
+	largest = find_largest(stack_a);
+	smallest = find_smallest(stack_a);
+	head = stack_a;
+	position = 0;
+	if (num > largest)
+		return (find_idx(stack_a, largest));
+	else if (num < smallest)
+        return (find_idx(stack_a, smallest));
+	while (head->next)
+	{
+		if (head->num < num && num < head->next->num)
+			return (position + 1);
+		position++;
+		head = head->next;
+	}
+	return (position + 1);
+}
+
+static void	shift_2top_a(t_lista **stack_a, int index)
+{
+	int	length;
+
+	length = list_len(*stack_a) / 2;
+	if (index <= length)
+		perfom_ra(stack_a, index);
+	else if (index > length)
+		perfom_rra(stack_a, index);
+}
+
+void push_b2a(t_lista **stack_a, t_lista **stack_b)
+{
+    int position;
+
+    while (*stack_b)
+    {
+		position = find_pos(*stack_a, (*stack_b)->num);
+        shift_2top_a(stack_a, position);
+        pa(stack_a, stack_b);
+    }
+}

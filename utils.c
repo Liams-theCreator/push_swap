@@ -1,5 +1,22 @@
 #include "pushswap.h"
 
+int	find_idx(t_lista *stack_a, int num)
+{
+	int	idx;
+	t_lista *head;
+
+	idx = 0;
+	head = stack_a;
+	while (head)
+	{
+		if (num == head->num)
+			return (idx);
+		idx++;
+		head = head->next;
+	}
+	return (-1);
+}
+
 int	find_max(t_lista *stack_a)
 {
 	int		max_num;

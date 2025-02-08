@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/08 16:59:28 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/08 20:50:27 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	main(int argc, char **argv)
 			sorting_algorithm(&stack_a, &stack_b);
 	}
 	print_list(stack_a);
-	print_list(stack_b);
 	free_list(&stack_a);
 	free_list(&stack_b);
 	return (0);

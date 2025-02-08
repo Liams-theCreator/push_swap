@@ -6,28 +6,11 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:22 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/08 16:23:14 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/08 18:56:22 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-static int	find_idx(t_lista *stack_a, int num)
-{
-	int	idx;
-	t_lista *head;
-
-	idx = 0;
-	head = stack_a;
-	while (head)
-	{
-		if (num == head->num)
-			return (idx);
-		idx++;
-		head = head->next;
-	}
-	return (-1);
-}
 
 static int	minimum(int num1, int num2)
 {
@@ -49,7 +32,7 @@ static int	calcul_moves(t_lista *stack_a, int number, t_lista *stack_b, int posi
 	return (cost_in_a + cost_in_b);
 }
 
-static void	perfom_ra(t_lista **stack_a, int index)
+void	perfom_ra(t_lista **stack_a, int index)
 {
 	int	i;
 
@@ -61,7 +44,7 @@ static void	perfom_ra(t_lista **stack_a, int index)
 	}
 }
 
-static void	perfom_rra(t_lista **stack_a, int index)
+void	perfom_rra(t_lista **stack_a, int index)
 {
 	int	len;
 
