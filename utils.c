@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/09 11:06:48 by imellali          #+#    #+#             */
+/*   Updated: 2025/02/09 11:08:22 by imellali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
 int	find_idx(t_lista *stack_a, int num)
 {
-	int	idx;
-	t_lista *head;
+	int		idx;
+	t_lista	*head;
 
 	idx = 0;
 	head = stack_a;
@@ -69,6 +81,7 @@ int	find_largest(t_lista *stack)
 {
 	int		largest;
 	t_lista	*head;
+
 	largest = stack->num;
 	head = stack;
 	while (head)
@@ -84,6 +97,7 @@ int	find_smallest(t_lista *stack)
 {
 	int		smallest;
 	t_lista	*head;
+
 	smallest = stack->num;
 	head = stack;
 	while (head)

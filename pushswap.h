@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/05 14:07:58 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:07:42 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,21 +61,21 @@ void	pb(t_lista **stack_a, t_lista **stack_b);
 
 // sorting functions
 void	sorting_algorithm(t_lista **stack_a, t_lista **stack_b);
-void    push_b2a(t_lista **stack_a, t_lista **stack_b);
-void    push_a2b(t_lista **stack_a, t_lista **stack_b);
+void	push_b2a(t_lista **stack_a, t_lista **stack_b);
+void	push_a2b(t_lista **stack_a, t_lista **stack_b);
 void	sort_two(t_lista **stack_a);
 void	sort_three(t_lista **stack_a);
 void	sort_four(t_lista **stack_a, t_lista **stack_b);
 void	sort_five(t_lista **stack_a, t_lista **stack_b);
 
 // utils functions
-int	find_idx(t_lista *stack_a, int num);
-int	find_max(t_lista *stack_a);
-int	find_min(t_lista *stack_a);
-int	find_largest(t_lista *stack);
-int	find_smallest(t_lista *stack);
-int	find_position(t_lista *stack_b, int num);
-int	find_pos(t_lista *stack_a, int num);
+int		find_idx(t_lista *stack_a, int num);
+int		find_max(t_lista *stack_a);
+int		find_min(t_lista *stack_a);
+int		find_largest(t_lista *stack);
+int		find_smallest(t_lista *stack);
+int		find_position(t_lista *stack_b, int num);
+int		find_pos(t_lista *stack_a, int num);
 void	perfom_ra(t_lista **stack_a, int index);
 void	perfom_rra(t_lista **stack_a, int index);
 

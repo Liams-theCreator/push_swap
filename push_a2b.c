@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:22 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/08 18:56:22 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:19:50 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,15 @@ static int	minimum(int num1, int num2)
 	return (num2);
 }
 
-static int	calcul_moves(t_lista *stack_a, int number, t_lista *stack_b, int position)
+static int	calcul_moves(t_lista *stack_a, int num, t_lista *stack_b, int pos)
 {
 	int	cost_in_a;
 	int	cost_in_b;
 	int	index;
 
-	index = find_idx(stack_a, number);
+	index = find_idx(stack_a, num);
 	cost_in_a = minimum(index, list_len(stack_a) - index);
-	cost_in_b = minimum(position, list_len(stack_b) - position);
-
+	cost_in_b = minimum(pos, list_len(stack_b) - pos);
 	return (cost_in_a + cost_in_b);
 }
 
@@ -125,19 +124,20 @@ int	find_position(t_lista *stack_b, int num)
 	return (position + 1);
 }
 
-void    push_a2b(t_lista **stack_a, t_lista **stack_b)
+void	push_a2b(t_lista **stack_a, t_lista **stack_b)
 {
-	int	moves;
-	int	cheap_moves;
-	t_lista *node;
-	t_lista *cheap_num;
+	int		moves;
+	int		cheap_moves;
+	t_lista	*node;
+	t_lista	*cheap_num;
 
-	moves = 444444;
+	moves = 44444444;
 	cheap_num = NULL;
 	node = *stack_a;
 	while (node)
 	{
-		cheap_moves = calcul_moves(*stack_a, node->num, *stack_b, find_position(*stack_b, node->num));
+		cheap_moves = calcul_moves(*stack_a, node->num, *stack_b,
+				find_position(*stack_b, node->num));
 		if (cheap_moves < moves)
 		{
 			moves = cheap_moves;

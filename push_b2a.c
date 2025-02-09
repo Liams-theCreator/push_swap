@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:29 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/08 21:44:18 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:11:50 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	find_pos(t_lista *stack_a, int num)
 	if (num > largest)
 		return (find_idx(stack_a, largest) + 1);
 	else if (num < smallest)
-        return (find_idx(stack_a, smallest));
+		return (find_idx(stack_a, smallest));
 	while (head->next)
 	{
 		if (head->num < num && num < head->next->num)
@@ -48,14 +48,14 @@ static void	shift_2top_a(t_lista **stack_a, int index)
 		perfom_rra(stack_a, index);
 }
 
-void push_b2a(t_lista **stack_a, t_lista **stack_b)
+void	push_b2a(t_lista **stack_a, t_lista **stack_b)
 {
-    int position;
+	int	position;
 
-    while (*stack_b)
-    {
+	while (*stack_b)
+	{
 		position = find_pos(*stack_a, (*stack_b)->num);
-        shift_2top_a(stack_a, position);
-        pa(stack_a, stack_b);
-    }
+		shift_2top_a(stack_a, position);
+		pa(stack_a, stack_b);
+	}
 }
