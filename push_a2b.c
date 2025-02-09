@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:22 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/09 11:19:50 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/09 22:54:26 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,34 @@ static int	minimum(int num1, int num2)
 		return (num1);
 	return (num2);
 }
+rr
+rrr
+
+32
+14
+412		
+-1		6
+-32		3
+0v
 
 static int	calcul_moves(t_lista *stack_a, int num, t_lista *stack_b, int pos)
 {
 	int	cost_in_a;
 	int	cost_in_b;
+	int	optimized;
 	int	index;
 
 	index = find_idx(stack_a, num);
 	cost_in_a = minimum(index, list_len(stack_a) - index);
 	cost_in_b = minimum(pos, list_len(stack_b) - pos);
+	rr
+		rrr
+	if (cost_in_a > 0 && cost_in_b > 0)
+	{
+		optimized = minimum(cost_in_a, cost_in_b);
+		cost_in_b -= optimized;
+		cost_in_b -= optimized;
+	}
 	return (cost_in_a + cost_in_b);
 }
 
