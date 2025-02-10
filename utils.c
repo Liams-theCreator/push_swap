@@ -29,54 +29,6 @@ int	find_idx(t_lista *stack_a, int num)
 	return (-1);
 }
 
-int	find_max(t_lista *stack_a)
-{
-	int		max_num;
-	int		its_index;
-	int		counter;
-	t_lista	*head;
-
-	max_num = stack_a->num;
-	its_index = 0;
-	counter = 0;
-	head = stack_a;
-	while (head)
-	{
-		if (head->num > max_num)
-		{
-			max_num = head->num;
-			its_index = counter;
-		}
-		counter++;
-		head = head->next;
-	}
-	return (its_index);
-}
-
-int	find_min(t_lista *stack_a)
-{
-	int		min_num;
-	int		its_index;
-	int		counter;
-	t_lista	*head;
-
-	min_num = stack_a->num;
-	its_index = 0;
-	counter = 0;
-	head = stack_a;
-	while (head)
-	{
-		if (head->num < min_num)
-		{
-			min_num = head->num;
-			its_index = counter;
-		}
-		counter++;
-		head = head->next;
-	}
-	return (its_index);
-}
-
 int	find_largest(t_lista *stack)
 {
 	int		largest;
@@ -107,4 +59,26 @@ int	find_smallest(t_lista *stack)
 		head = head->next;
 	}
 	return (smallest);
+}
+
+void	shift_2top_a(t_lista **stack_a, int index)
+{
+	int	length;
+
+	length = list_len(*stack_a) / 2;
+	if (index <= length)
+		perfom_ra(stack_a, index);
+	else if (index > length)
+		perfom_rra(stack_a, index);
+}
+
+void	shift_2top_b(t_lista **stack_b, int position)
+{
+	int	length;
+
+	length = list_len(*stack_b) / 2;
+	if (position <= length)
+		perfom_rb(stack_b, position);
+	else if (position > length)
+		perfom_rrb(stack_b, position);
 }

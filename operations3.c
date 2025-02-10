@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_sort.c                                        :+:      :+:    :+:   */
+/*   operations3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 14:29:57 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/10 18:50:19 by imellali         ###   ########.fr       */
+/*   Created: 2025/02/10 18:37:04 by imellali          #+#    #+#             */
+/*   Updated: 2025/02/10 18:51:04 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	sorting_algorithm(t_lista **stack_a, t_lista **stack_b)
+void	rr(t_lista **stack_a, t_lista **stack_b)
 {
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	while (list_len(*stack_a) > 3)
-	{
-		if (sorted(*stack_a) == 0)
-			break ;
-		push_a2b(stack_a, stack_b);
-	}
-	if ((sorted(*stack_a)) == -1 && list_len(*stack_a) == 3)
-		sort_three(stack_a);
-	push_b2a(stack_a, stack_b);
-	if (sorted(*stack_a) == -1)
-		shift_2top_a(stack_a, find_idx(*stack_a, find_smallest(*stack_a)));
+	ra(stack_a, 0);
+	rb(stack_b, 0);
+	write(1, "rr\n", 3);
+}
+
+void	rrr(t_lista **stack_a, t_lista **stack_b)
+{
+	rra(stack_a, 0);
+	rrb(stack_b, 0);
+	write(1, "rrr\n", 4);
+}
+
+void	ss(t_lista **stack_a, t_lista **stack_b)
+{
+	sa(stack_a, 0);
+	sb(stack_b, 0);
+	write(1, "ss\n", 3);
 }

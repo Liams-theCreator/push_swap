@@ -66,7 +66,7 @@ void	sort_four(t_lista **stack_a, t_lista **stack_b)
 {
 	int	min_index;
 
-	min_index = find_min(*stack_a);
+	min_index = find_idx(*stack_a, find_smallest(*stack_a));
 	shift_to_push4(stack_a, stack_b, min_index);
 	sort_three(stack_a);
 	pa(stack_a, stack_b);
@@ -77,9 +77,9 @@ void	sort_five(t_lista **stack_a, t_lista **stack_b)
 	int	num1_idx;
 	int	num2_idx;
 
-	num1_idx = find_min(*stack_a);
+	num1_idx = find_idx(*stack_a, find_smallest(*stack_a));
 	shift_to_push5(stack_a, stack_b, num1_idx);
-	num2_idx = find_min(*stack_a);
+	num2_idx = find_idx(*stack_a, find_smallest(*stack_a));
 	shift_to_push4(stack_a, stack_b, num2_idx);
 	if ((sorted(*stack_a)) == -1)
 		sort_three(stack_a);

@@ -50,6 +50,8 @@ int	main(int argc, char **argv)
 		else
 			sorting_algorithm(&stack_a, &stack_b);
 	}
+	// if (sorted(stack_a) == 0)
+	// 	printf("sorted");
 	free_list(&stack_a);
 	free_list(&stack_b);
 	return (0);

@@ -24,11 +24,11 @@ typedef struct list_a
 }	t_lista;
 
 // string functions
-char	**ft_split(char const *s, char c);
-int		ft_atoi(const char *str, char **array, t_lista **list);
-char	*ft_strdup(const char *s);
-int		ft_strcmp(char *s1, char *s2);
 size_t	ft_strlen(const char *s);
+char	**ft_split(char const *s, char c);
+char	*ft_strdup(const char *s);
+int		ft_atoi(const char *str, char **array, t_lista **list);
+int		ft_strcmp(char *s1, char *s2);
 
 // input functions
 t_lista	*ft_parsing(int argc, char **argv);
@@ -37,7 +37,6 @@ t_lista	*ft_parsing(int argc, char **argv);
 t_lista	*ft_create_node(t_lista **head, int num);
 void	ft_add_to_list(t_lista **head, char **array, int num);
 int		list_len(t_lista *h);
-size_t	print_list(t_lista *h);
 
 // error handling functions
 void	ft_error(void);
@@ -70,14 +69,17 @@ void	sort_five(t_lista **stack_a, t_lista **stack_b);
 
 // utils functions
 int		find_idx(t_lista *stack_a, int num);
-int		find_max(t_lista *stack_a);
-int		find_min(t_lista *stack_a);
 int		find_largest(t_lista *stack);
 int		find_smallest(t_lista *stack);
 int		find_position(t_lista *stack_b, int num);
 int		find_pos(t_lista *stack_a, int num);
+
+// perfom operations functions
 void	perfom_ra(t_lista **stack_a, int index);
 void	perfom_rra(t_lista **stack_a, int index);
 void	perfom_rb(t_lista **stack_a, int index);
 void	perfom_rrb(t_lista **stack_a, int index);
+void	shift_2top_a(t_lista **stack_a, int index);
+void	shift_2top_b(t_lista **stack_a, int index);
+
 #endif

@@ -37,35 +37,12 @@ int	find_pos(t_lista *stack_a, int num)
 	return (position + 1);
 }
 
-static void	shift_2top_a(t_lista **stack_a, int index)
-{
-	int	length;
-
-	length = list_len(*stack_a) / 2;
-	if (index <= length)
-		perfom_ra(stack_a, index);
-	else if (index > length)
-		perfom_rra(stack_a, index);
-}
-
-static void	shift_2top_b(t_lista **stack_b, int position)
-{
-	int	length;
-
-	length = list_len(*stack_b) / 2;
-	if (position <= length)
-		perfom_rb(stack_b, position);
-	else if (position > length)
-		perfom_rrb(stack_b, position);
-}
-
 void	push_b2a(t_lista **stack_a, t_lista **stack_b)
 {
 	int	position;
 
 	while (*stack_b)
 	{
-		shift_2top_b(stack_b, find_max(*stack_b));
 		position = find_pos(*stack_a, (*stack_b)->num);
 		shift_2top_a(stack_a, position);
 		pa(stack_a, stack_b);
