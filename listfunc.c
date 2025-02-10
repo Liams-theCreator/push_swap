@@ -25,18 +25,40 @@ int	list_len(t_lista *h)
 	return (len);
 }
 
-t_lista	*ft_create_node(t_lista **head, int num)
+// t_lista	*ft_create_node(t_lista **head, int num)
+// {
+// 	t_lista	*node;
+// 	t_lista	*h;
+
+// 	h = *head;
+// 	node = malloc(sizeof(t_lista));
+// 	if (!node)
+// 		return (NULL);
+// 	node->num = num;
+// 	node->next = h;
+// 	*head = node;
+// 	return (node);
+// }
+
+t_lista *ft_create_node(t_lista **head, int num)
 {
 	t_lista	*node;
-	t_lista	*h;
-
-	h = *head;
+	t_lista	*temp;
+	
+	temp = *head;
 	node = malloc(sizeof(t_lista));
 	if (!node)
 		return (NULL);
 	node->num = num;
-	node->next = h;
-	*head = node;
+	node->next = NULL;
+	if (*head == NULL)
+	{
+		*head = node;
+		return (node);
+	}	
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = node;
 	return (node);
 }
 

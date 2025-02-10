@@ -42,8 +42,10 @@ int	find_position(t_lista *stack_b, int num)
 	smallest = find_smallest(stack_b);
 	head = stack_b;
 	position = 0;
-	if (num > largest || num < smallest)
+	if (num > largest)
 		return (find_idx(stack_b, largest));
+	if (num < smallest)
+		return (find_idx(stack_b, smallest) + 1);
 	while (head->next)
 	{
 		if (head->num > num && num > head->next->num)
