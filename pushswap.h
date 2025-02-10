@@ -78,5 +78,6 @@ int		find_position(t_lista *stack_b, int num);
 int		find_pos(t_lista *stack_a, int num);
 void	perfom_ra(t_lista **stack_a, int index);
 void	perfom_rra(t_lista **stack_a, int index);
-
+void	perfom_rb(t_lista **stack_a, int index);
+void	perfom_rrb(t_lista **stack_a, int index);
 #endif

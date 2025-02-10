@@ -6,26 +6,26 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/09 15:21:22 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:26:13 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-size_t	print_list(t_lista *h)
-{
-	size_t	nodes;
+// size_t	print_list(t_lista *h)
+// {
+// 	size_t	nodes;
 
-	nodes = 0;
-	while (h != NULL)
-	{
-		printf("  [ %d ]  \n", h->num);
-		h = h->next;
-		nodes++;
-	}
-	printf("\n");
-	return (nodes);
-}
+// 	nodes = 0;
+// 	while (h != NULL)
+// 	{
+// 		printf("  [ %d ]  \n", h->num);
+// 		h = h->next;
+// 		nodes++;
+// 	}
+// 	printf("\n");
+// 	return (nodes);
+// }
 
 int	main(int argc, char **argv)
 {
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 	t_lista	*stack_b;
 
 	if (argc <= 1)
-		ft_error();
+		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = ft_parsing(argc, argv);

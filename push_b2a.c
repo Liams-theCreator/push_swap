@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:29 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/09 11:11:50 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:21:14 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,24 @@ static void	shift_2top_a(t_lista **stack_a, int index)
 		perfom_rra(stack_a, index);
 }
 
+static void	shift_2top_b(t_lista **stack_b, int position)
+{
+	int	length;
+
+	length = list_len(*stack_b) / 2;
+	if (position <= length)
+		perfom_rb(stack_b, position);
+	else if (position > length)
+		perfom_rrb(stack_b, position);
+}
+
 void	push_b2a(t_lista **stack_a, t_lista **stack_b)
 {
 	int	position;
 
 	while (*stack_b)
 	{
+		shift_2top_b(stack_b, find_max(*stack_b));
 		position = find_pos(*stack_a, (*stack_b)->num);
 		shift_2top_a(stack_a, position);
 		pa(stack_a, stack_b);
