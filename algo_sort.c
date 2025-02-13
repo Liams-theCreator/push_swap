@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   algo_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:29:57 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/10 18:50:19 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/13 19:17:33 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	sorting_algorithm(t_lista **stack_a, t_lista **stack_b)
+void sorting_algorithm(t_lista **stack_a, t_lista **stack_b)
 {
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
 	while (list_len(*stack_a) > 3)
 	{
 		if (sorted(*stack_a) == 0)
-			break ;
+			break;
 		push_a2b(stack_a, stack_b);
 	}
 	if ((sorted(*stack_a)) == -1 && list_len(*stack_a) == 3)

@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/10 18:26:13 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/13 19:17:28 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-// size_t	print_list(t_lista *h)
-// {
-// 	size_t	nodes;
-
-// 	nodes = 0;
-// 	while (h != NULL)
-// 	{
-// 		printf("  [ %d ]  \n", h->num);
-// 		h = h->next;
-// 		nodes++;
-// 	}
-// 	printf("\n");
-// 	return (nodes);
-// }
-
-int	main(int argc, char **argv)
+size_t print_list(t_lista *h)
 {
-	t_lista	*stack_a;
-	t_lista	*stack_b;
+	size_t nodes;
+
+	nodes = 0;
+	while (h != NULL)
+	{
+		printf("  [ %d ]  \n", h->num);
+		h = h->next;
+		nodes++;
+	}
+	printf("\n");
+	return (nodes);
+}
+
+int main(int argc, char **argv)
+{
+	t_lista *stack_a;
+	t_lista *stack_b;
 
 	if (argc <= 1)
 		return (0);
@@ -50,8 +50,9 @@ int	main(int argc, char **argv)
 		else
 			sorting_algorithm(&stack_a, &stack_b);
 	}
-	// if (sorted(stack_a) == 0)
-	// 	printf("sorted");
+	if (sorted(stack_a) == 0)
+		printf("sorted\n");
+	// print_list(stack_b);
 	free_list(&stack_a);
 	free_list(&stack_b);
 	return (0);
