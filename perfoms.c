@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   perfoms.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:28:03 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/10 18:28:13 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/14 01:44:07 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	perfom_ra(t_lista **stack_a, int index)
+void perfom_ra(t_lista **stack_a, int index)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < index)
@@ -24,9 +24,9 @@ void	perfom_ra(t_lista **stack_a, int index)
 	}
 }
 
-void	perfom_rra(t_lista **stack_a, int index)
+void perfom_rra(t_lista **stack_a, int index)
 {
-	int	len;
+	int len;
 
 	len = list_len(*stack_a) - 1;
 	while (len >= index)
@@ -36,9 +36,9 @@ void	perfom_rra(t_lista **stack_a, int index)
 	}
 }
 
-void	perfom_rb(t_lista **stack_b, int index)
+void perfom_rb(t_lista **stack_b, int index)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < index)
@@ -48,9 +48,9 @@ void	perfom_rb(t_lista **stack_b, int index)
 	}
 }
 
-void	perfom_rrb(t_lista **stack_b, int index)
+void perfom_rrb(t_lista **stack_b, int index)
 {
-	int	len;
+	int len;
 
 	len = list_len(*stack_b) - 1;
 	while (len >= index)

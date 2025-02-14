@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:32:41 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/13 18:34:20 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/14 00:00:48 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct list_a
 	int num;
 	struct list_a *next;
 } t_lista;
+
+size_t print_list(t_lista *h);
 
 // string functions
 size_t ft_strlen(const char *s);

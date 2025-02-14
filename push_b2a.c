@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:29 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/13 17:59:25 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/14 01:12:59 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ void push_b2a(t_lista **stack_a, t_lista **stack_b)
 	while (*stack_b)
 	{
 		position = find_pos(*stack_a, (*stack_b)->num);
+		// printf("position %d, number to push %d\n", position, (*stack_b)->num);
+		// print_list(*stack_b);
+		// print_list(*stack_a);
 		shift_2top_a(stack_a, position);
 		pa(stack_a, stack_b);
 	}
