@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:46:37 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/13 19:18:23 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:46:44 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,6 @@ int list_len(t_lista *h)
 	}
 	return (len);
 }
-
-// t_lista *ft_create_node(t_lista **head, int num)
-// {
-// 	t_lista *node;
-// 	t_lista *h;
-
-// 	h = *head;
-// 	node = malloc(sizeof(t_lista));
-// 	if (!node)
-// 		return (NULL);
-// 	node->num = num;
-// 	node->next = h;
-// 	*head = node;
-// 	return (node);
-// }
 
 t_lista *ft_create_node(t_lista **head, int num)
 {
