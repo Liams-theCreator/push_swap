@@ -6,18 +6,18 @@
 /*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:34:29 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/14 18:43:38 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/15 12:19:07 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int find_pos(t_lista *stack_a, int num)
+int	find_pos(t_lista *stack_a, int num)
 {
-	int position;
-	int largest;
-	int smallest;
-	t_lista *head;
+	int		position;
+	int		largest;
+	int		smallest;
+	t_lista	*head;
 
 	largest = find_largest(stack_a);
 	smallest = find_smallest(stack_a);
@@ -36,9 +36,10 @@ int find_pos(t_lista *stack_a, int num)
 	}
 	return (position + 1);
 }
-void push_b2a(t_lista **stack_a, t_lista **stack_b)
+
+void	push_b2a(t_lista **stack_a, t_lista **stack_b)
 {
-	int position;
+	int	position;
 
 	while (*stack_b)
 	{

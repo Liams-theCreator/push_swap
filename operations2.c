@@ -6,16 +6,16 @@
 /*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:35:48 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/14 02:24:30 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/15 12:25:21 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void pb(t_lista **stack_a, t_lista **stack_b)
+void	pb(t_lista **stack_a, t_lista **stack_b)
 {
-	t_lista *head;
-	t_lista *new_head;
+	t_lista	*head;
+	t_lista	*new_head;
 
 	head = *stack_a;
 	new_head = (*stack_a)->next;
@@ -29,13 +29,14 @@ void pb(t_lista **stack_a, t_lista **stack_b)
 	*stack_a = new_head;
 	write(1, "pb\n", 3);
 }
-void pa(t_lista **stack_a, t_lista **stack_b)
+
+void	pa(t_lista **stack_a, t_lista **stack_b)
 {
-	t_lista *head;
-	t_lista *new_head;
+	t_lista	*head;
+	t_lista	*new_head;
 
 	if (!(*stack_b))
-		return;
+		return ;
 	head = *stack_b;
 	new_head = (*stack_b)->next;
 	head->next = *stack_a;
@@ -43,10 +44,11 @@ void pa(t_lista **stack_a, t_lista **stack_b)
 	*stack_b = new_head;
 	write(1, "pa\n", 3);
 }
-void sa(t_lista **stack, int msg)
+
+void	sa(t_lista **stack, int msg)
 {
-	t_lista *old_head;
-	t_lista *new_head;
+	t_lista	*old_head;
+	t_lista	*new_head;
 
 	old_head = *stack;
 	new_head = (*stack)->next;
@@ -59,10 +61,10 @@ void sa(t_lista **stack, int msg)
 		write(1, "sa\n", 3);
 }
 
-void sb(t_lista **stack, int msg)
+void	sb(t_lista **stack, int msg)
 {
-	t_lista *old_head;
-	t_lista *new_head;
+	t_lista	*old_head;
+	t_lista	*new_head;
 
 	old_head = *stack;
 	new_head = (*stack)->next;
