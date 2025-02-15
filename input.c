@@ -6,7 +6,7 @@
 /*   By: imellali <imellali@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:47:19 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/15 15:19:45 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:29:50 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_intcheck(char *number)
 	i = 0;
 	if (number[i] == '-' || number[i] == '+')
 	{
-		if (number[i + 1] == '\0') 
+		if (number[i + 1] == '\0')
 			return (-1);
 		i++;
 	}

@@ -6,26 +6,11 @@
 /*   By: imellali <imellali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 14:50:50 by imellali          #+#    #+#             */
-/*   Updated: 2025/02/15 15:16:36 by imellali         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:29:20 by imellali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-size_t	print_list(t_lista *h)
-{
-	size_t	nodes;
-
-	nodes = 0;
-	while (h != NULL)
-	{
-		printf("  [ %d ]  \n", h->num);
-		h = h->next;
-		nodes++;
-	}
-	printf("\n");
-	return (nodes);
-}
 
 int	main(int argc, char **argv)
 {
